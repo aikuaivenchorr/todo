@@ -8,7 +8,7 @@
 
 
     foreach($todos as $todo){
-        echo $todo["title"] . $todo["priority"] . $todo["completed"] . "<br>";
+        echo "Title: " . $todo["title"] . " Priority: ". $todo["priority"] . " Completed: " . $todo["completed"] . "<br><br><br>";
 //        foreach($todo as $onetodo){
 //            echo "<br>" . $onetodo;
         }
