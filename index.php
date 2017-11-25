@@ -33,7 +33,7 @@ echo "<hr><br><h1>TO DO LIST</h1><br>";
 
 <?php 
 require_once 'partials/insert_new_todo.php';
-  
+
 
 ?>
 

@@ -10,4 +10,5 @@ $statement->execute(array(
   ":completed" => $_POST["completed"],
   ":priority" => $_POST["priority"]
 ));
+header('Location: index.php'); 
 }
