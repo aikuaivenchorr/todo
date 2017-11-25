@@ -24,8 +24,6 @@ echo "<hr><br><h1>TO DO LIST</h1><br>";
   <br><br>
   Priority: <input type="number" name="priority" value="">
   <br><br>
-  CreatedBy: <input type="text" name="username" value=""> <br><br>
-  <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
 
