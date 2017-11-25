@@ -3,6 +3,7 @@
 //    require_once 'partials/footer.php';
     require_once 'partials/db.php';
     require_once 'partials/fetch_all_todos.php';
+//require_once 'partials/sort_by_priority.php';
 
 
 
@@ -16,10 +17,16 @@
 
 
 echo "<hr><br><h1>TO DO LIST</h1><br>";
-
-
+echo '<a href="index.php?sortByPriority=true">Sort by priority</a>';
 //$title = $completed = $priority = $username = "";
-
+if(!empty($_GET['sortByPriority'])){
+//    echo $_GET['sortByPriority'];
+//      echo "Yep! <br>";
+  
+    echo $_GET['sortByPriority'];
+      echo "Yep! <br>";
+     require_once 'partials/fetch_all_todos.php';
+}
 ?>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">  
   Title: <input type="text" name="title" value="" required>
@@ -32,8 +39,9 @@ echo "<hr><br><h1>TO DO LIST</h1><br>";
 </form>
 
 <?php 
+if(!empty($_POST)){
 require_once 'partials/insert_new_todo.php';
-
+}
 
 ?>
 
