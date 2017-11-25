@@ -40,7 +40,11 @@ if(!empty($_GET['sortByPriority'])){
 
 <?php 
 if(!empty($_POST)){
+  
 require_once 'partials/insert_new_todo.php';
+       echo 'Skapandet av todon lyckades!';
+    header("Refresh: 5; URL=index.php");
+   
 }
 
 ?>
