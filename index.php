@@ -5,24 +5,36 @@
     require_once 'partials/fetch_all_todos.php';
 //require_once 'partials/sort_by_priority.php';
 
+echo "<hr><br><h1>TO DO LIST</h1><br>";
 
 $completed_array = array();
     foreach($todos as $todo){
         if($todo["completed"] == 0){
-        echo "Title: " . $todo["title"] . " Priority: ". $todo["priority"] . " Completed: " . $todo["completed"] . "<br><br><br>";
+        echo "Title: " . $todo["title"] . " Priority: ". $todo["priority"] . " Completed: " . $todo["completed"] . 
+         '<form method="GET" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '">  
+ 
+  Mark as completed: <input type="hidden" min="0" max="1" name="completed" value="1">
+
+  <input type="submit" name="submit" value="✔️">  
+</form><br>';
         }
         else{            
              array_push($completed_array, $todo);         
         }
     }
-echo "<hr>Done: <br><br>";
+
+
+if(!empty($_GET)){
+    echo "GET IT!";
+}
+echo "<hr><h2>Done: </h2><br><br>";
 //var_dump($completed_array);
 foreach($completed_array as $done){
      echo "Title: " .  $done["title"] . " Priority: ".  $done["priority"] . " Completed: " .  $done["completed"] . "<br><br><br>";
 }
 
 
-echo "<hr><br><h1>TO DO LIST</h1><br>";
+echo "<hr><br><h1>ADD</h1><br>";
 echo '<a href="index.php?sortByPriority=true">Sort by priority</a>';
 //$title = $completed = $priority = $username = "";
 if(!empty($_GET['sortByPriority'])){
