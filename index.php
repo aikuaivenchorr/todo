@@ -11,11 +11,8 @@ $completed_array = array();
         if($todo["completed"] == 0){
         echo "Title: " . $todo["title"] . " Priority: ". $todo["priority"] . " Completed: " . $todo["completed"] . "<br><br><br>";
         }
-        else{
-           echo "Else - completed " . $todo["completed"];
-//            
-             array_push($completed_array, $todo);
-         
+        else{            
+             array_push($completed_array, $todo);         
         }
     }
 echo "<hr>Done: <br><br>";
