@@ -13,10 +13,28 @@ $completed_array = array();
         echo "Title: " . $todo["title"] . " Priority: ". $todo["priority"] . " Completed: " . $todo["completed"] . 
          '<form method="GET" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '">  
  
-  Mark as completed: <input type="hidden" min="0" max="1" name="completed" value="1">
+  <input type="hidden" min="0" max="1" name="done" value="1">
 
-  <input type="submit" name="submit" value="✔️">  
+  <button type="submit" name="completed" value="completed" title="Mark as completed"> ✔️ </button>  
+</form> '
+   . 
+         '<form method="GET" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '">  
+ 
+  <input type="hidden" min="0" max="1" name="del" value="delete">
+
+  <button type="submit" name="delete"  title="Delete" value="delete">❌</button>  
+</form>'
+            
+             . 
+         '<form method="GET" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '">  
+ 
+  <input type="hidden" min="0" max="1" name="update" value="edit">
+
+  <button type="submit" name="edit"  title="Edit" value="edit">🖊️</button>  
 </form><br>';
+            
+            
+            
         }
         else{            
              array_push($completed_array, $todo);         
