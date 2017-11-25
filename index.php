@@ -6,14 +6,23 @@
 //require_once 'partials/sort_by_priority.php';
 
 
-
+$completed_array = array();
     foreach($todos as $todo){
+        if($todo["completed"] == 0){
         echo "Title: " . $todo["title"] . " Priority: ". $todo["priority"] . " Completed: " . $todo["completed"] . "<br><br><br>";
-//        foreach($todo as $onetodo){
-//            echo "<br>" . $onetodo;
         }
-//      require_once 'partials/todo_row.php';
-    
+        else{
+           echo "Else - completed " . $todo["completed"];
+//            
+             array_push($completed_array, $todo);
+         
+        }
+    }
+echo "<hr>Done: <br><br>";
+//var_dump($completed_array);
+foreach($completed_array as $done){
+     echo "Title: " .  $done["title"] . " Priority: ".  $done["priority"] . " Completed: " .  $done["completed"] . "<br><br><br>";
+}
 
 
 echo "<hr><br><h1>TO DO LIST</h1><br>";
