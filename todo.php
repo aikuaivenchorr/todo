@@ -17,6 +17,7 @@ createdBy VARCHAR(64) NOT NULL
 )");
 $statement->execute();
 $todos =  $statement ->fetchAll(PDO::FETCH_ASSOC); 
-?>    
+?>   
+ 
 </body>
 </html>
