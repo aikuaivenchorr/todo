@@ -18,6 +18,8 @@ require_once 'partials/add.php';
 $completed_array = array();
     foreach($todos as $todo){
         if($todo["completed"] == 0){
+            $id = $todo["id"];
+            
         echo "Title: " . $todo["title"] . " Priority: ". $todo["priority"] . " Completed: " . $todo["completed"] . 
          '<form method="GET" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '">  
  
@@ -28,10 +30,11 @@ $completed_array = array();
    . 
          '<form method="GET" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '">  
  
-  <input type="hidden" min="0" max="1" name="del" value="delete">
+  <input type="hidden"  name="delete" value="' . $id . '">
 
-  <button type="submit" name="delete"  title="Delete" value="delete">❌</button>  
-</form>'
+  <button type="submit" name="deleteSubmit"  title="Delete" value="delete">❌</button>  
+</form><br>
+<a href="index.php?id=' . $id . '&deleteSubmit=delete">Delete</a> '
             
              . 
          '<form method="GET" action="' . htmlspecialchars($_SERVER['PHP_SELF']) . '">  
@@ -48,6 +51,20 @@ $completed_array = array();
              array_push($completed_array, $todo);         
         }
     }
+
+
+
+
+if(!empty($_GET['delete'] == $id) && $_GET['deleteSubmit'] == 'delete'){
+    echo "DUMP ";
+    var_dump($_GET['delete']);
+    require_once 'partials/delete.php';
+}
+
+
+
+
+
 
 //Priority sorting
 
@@ -71,5 +88,3 @@ require_once 'partials/done.php';
 
 
 ?>
-    
-   

@@ -5,16 +5,18 @@ if(isset($GET['sortByPriority']) && $GET['sortByPriority'] == true){
     echo $GET['sortByPriority'];
       echo "Urra! <br>";
     $statement = $pdo->prepare(
-      "SELECT title, completed, priority, createdBy FROM todo ORDER BY priority ASC"
+      "SELECT * FROM todo"
     );
 }
 else{
       echo "Hej <br>";
 $statement = $pdo->prepare(
-  "SELECT title, completed, priority, createdBy FROM todo ORDER BY priority DESC"
+  "SELECT * FROM todo"
 );
 }
 
 
 $statement->execute();
 $todos = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+//  "SELECT * FROM todo ORDER BY priority DESC"

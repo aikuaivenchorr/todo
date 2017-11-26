@@ -11,5 +11,4 @@ $statement->execute(array(
   ":priority" => $_POST["priority"]
 ));
 
-
 }
