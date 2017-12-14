@@ -29,14 +29,14 @@ require 'partials/insert_new_todo.php';
    
     
    <h1>TODO LIST</h1>
-   
+  
    <form name="todo_form" action="index.php" method="POST">
        <label for="title">Title</label>
        <input type="text" name="title" id="title">
        <label for="completed">Completed</label>
-       <input type="text" name="completed" id="completed">
+       <input type="checkbox" value="1" name="completed" id="completed">
        <label for="priority">Priority</label>
-       <input type="text" name="priority" id="priority">
+       <input type="number" name="priority" id="priority">
        <label for="createdBy">Author</label>
        <input type="text" name="createdBy" value="Mariia"id="createdBy">
        <input type="submit" value="submit">
