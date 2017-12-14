@@ -9,43 +9,18 @@
 <body>
   
   
-  <?php
-$servername = "localhost";
-$username="root";
-$password ="";
-$pdo = new PDO(
-  "mysql:host=localhost;dbname=todo;charset=utf8",
-  "root",
-  ""
-);
-
-//handling of error messages
-$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//defence against simulated queries
-$pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-
-if($pdo){
-    echo "Yeee! Connected!";
-}
-
-?>
+ 
    <?php
     
     if(!empty($_POST)){
-
+require 'partials/insert_new_todo.php';
         if($pdo){
-            echo "Connected!";
+            echo "Connected! ";
         }
         
-$statement = $pdo->prepare(
-  "INSERT INTO `todo`(`title`, `completed`, `priority`, `createdBy`) VALUES (:title,:completed,:priority,:createdBy)"
-);
-$statement->execute(array(
-  ":title" => $_POST["title"],
-  ":completed" => $_POST["completed"],
-  ":priority" => $_POST["priority"],
-   ":createdBy" => $_POST["createdBy"]
-));
+        if($statement){
+            echo "<br> Published!";
+        }
 
 }
 
