@@ -6,8 +6,8 @@
 </head>
 <body>
 <?php 
-require_once 'db.php';
-// fetch all the blogposts that will order the posts by date
+require_once 'partials/db.php';
+// create table
 $statement = $pdo->prepare("CREATE TABLE todo (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 title VARCHAR(64) NOT NULL,
