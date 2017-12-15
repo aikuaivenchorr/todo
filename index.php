@@ -1,5 +1,4 @@
 <?php
-
 if(!empty($_REQUEST)){
    header('Refresh: 3; URL=index.php');
    // header('Location:' . $_SERVER['PHP_SELF']);
@@ -29,7 +28,7 @@ if(!empty($_REQUEST)){
   
  
 <?php
-    
+    $flagEdit = true;
     $todoList = array();
     $doneList = array();
 
@@ -86,6 +85,14 @@ if(!empty($_REQUEST)){
     foreach($todoList as $todo){
             $id = $todo['id'];
             $title = $todo['title'];
+           // $editButtonCheck = '<i class="fas fa-check"></i>';
+            $editField = '<form name="form_edit" method="POST" action="' . $_SERVER['PHP_SELF'] . '">  
+
+                    <input type=""  name="editTitle" value="' . $title . '">
+                    <input type="hidden"  name="id" value="' . $id . '">
+
+                    <button type="submit" id="edit" name="editSubmit"  title="Edit" value="edit"><i class="fas fa-check"></i></button> 
+                    </form> ';
              echo  '<form name="form_delete" method="POST" action="' . $_SERVER['PHP_SELF'] . '">  
 
                     <input type="hidden"  name="deleteId" value="' . $id . '">
@@ -94,18 +101,25 @@ if(!empty($_REQUEST)){
                     </form> ' 
                  
                     . $todo['priority'] 
-                    . " " 
-                    . " <strong>" . $todo['title'] . "</strong> " 
-                    . " "
-                    .  '<form name="form_edit" method="POST" action="' . $_SERVER['PHP_SELF'] . '">  
+                    . " " ;
+                 
+               if($flagEdit == false)  {
+                    echo  " <strong>" . $title  . "</strong> ";
+                   echo    '<form name="form_editFlag" method="POST" action="' . $_SERVER['PHP_SELF'] . '">  
 
-                    <input type=""  name="editTitle" value="' . $title . '">
+                    <input type="hidden"  name="flagEdit" value="true">
                     <input type="hidden"  name="id" value="' . $id . '">
 
-                    <button type="submit" id="edit" name="editSubmit"  title="Edit" value="edit"><i class="fas fa-pencil-alt"></i></button> 
-                    </form> ' 
+                    <button type="submit" id="editFlagsubmit" name="flagSubmit"  title="Edit" value="editFlag"><i class="fas fa-pencil-alt"></i></button> 
+                    </form> ' ;
+               }
+        else{
+            echo $editField . " ";
+        }
                  
-                    .  $todo['createdBy'] . 
+                  
+                 
+                  echo  $todo['createdBy'] . 
                 
 
                   '<form name="form_completed" method="POST" action="' . $_SERVER['PHP_SELF'] . '"> <input type="hidden" value="' . $id . '" name="id" id="title">

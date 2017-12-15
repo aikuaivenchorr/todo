@@ -1,6 +1,7 @@
 <?php
 $notification = "";
 
+
 if(!empty($_POST)){
     if(empty($_POST['completed']) && empty($_POST['deleteId'])  && empty($_POST['editTitle'])  ){
         require 'partials/insert_new_todo.php';
