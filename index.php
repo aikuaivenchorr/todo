@@ -83,7 +83,10 @@ require 'partials/insert_new_todo.php';
         <?php  
             //writes out all not completed tasks
             //var_dump($todoList);
-         
+         foreach($todoList as $todo){
+               echo $todo['priority'] . " " .  $todo['title'] . " " . $todo['completed'] . " " .  $todo['createdBy'] . "<hr>";
+             
+         }
          
       ?> 
          
@@ -96,6 +99,12 @@ require 'partials/insert_new_todo.php';
          <?php 
          //writes out all completed tasks
             //var_dump($doneList);
+         
+         
+            foreach($doneList as $todo){
+                echo $todo['priority'] . " " .  $todo['title'] . " " . $todo['completed'] . " " .  $todo['createdBy'] . "<hr>";
+             
+         }
          ?>   
      </div>
  
