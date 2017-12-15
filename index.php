@@ -96,16 +96,18 @@ $doneList = array();
           
           //Adds new todo to database    
 if(!empty($_POST)){
-require 'partials/insert_new_todo.php';
-        if($pdo){
-            echo "Connected! ";
-        }
-        
-        if($statement){
-            echo "<br> Published!";
-        }
+    if(empty($_POST['completed'])){
+        require 'partials/insert_new_todo.php';
+    }
+
+    elseif($_POST["completed"] == '1'){
+        require 'partials/check_as_done.php';
+    }
+    
 
 }
+          
+
     
          
       ?> 
