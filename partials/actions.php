@@ -2,12 +2,12 @@
 $notification = "";
 
 if(!empty($_POST)){
-    if(empty($_POST['completed']) && empty($_POST['deleteId'])  ){
+    if(empty($_POST['completed']) && empty($_POST['deleteId'])  && empty($_POST['editTitle'])  ){
         require 'partials/insert_new_todo.php';
    
        if($statement){
           $published = "<br> Published!";
-           $notification = $published;
+          $notification = $published;
            
         }
     
@@ -18,7 +18,7 @@ if(!empty($_POST)){
         
         if($statement){
            $done = "<br> Done!";
-             $notification =  $done;
+           $notification =  $done;
           
         }
     }
@@ -28,7 +28,17 @@ if(!empty($_POST)){
         
         if($statement){
            $deleted = "<br> Deleted!";
-             $notification = $deleted;
+           $notification = $deleted;
+         
+        }
+    }
+    
+        elseif(!empty($_POST['editTitle'])){
+        require 'partials/edit_todo.php';
+        
+        if($statement){
+           $edited = "<br> Edited!";
+           $notification = $edited;
          
         }
     }
