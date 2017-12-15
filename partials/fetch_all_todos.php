@@ -11,5 +11,3 @@ require 'db.php';
 
 $statement->execute();
 $todos = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-//  "SELECT * FROM todo ORDER BY priority DESC"
