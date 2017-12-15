@@ -1,6 +1,7 @@
 <?php
-if(!empty($_REQUEST)){
-   header('Refresh: 3; URL=index.php');
+//Redirect with getting new data from database. Prevents redirect while editing todo title
+if(!empty($_REQUEST) && empty($_GET['flagEdit'])){
+  header('Refresh: 3; URL=index.php');
    // header('Location:' . $_SERVER['PHP_SELF']);
 
 }
