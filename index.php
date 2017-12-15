@@ -28,7 +28,16 @@ if(!empty($_REQUEST)){
   
  
 <?php
-    $flagEdit = true;
+    $flagEdit = false;
+    if(!empty($_GET['flagEdit'])){
+       $flagEdit  = $_GET['flagEdit'];
+    if($flagEdit == true){
+         $flagEdit = true;
+    }
+    else{
+      $flagEdit = false;
+    }
+    }
     $todoList = array();
     $doneList = array();
 
@@ -105,12 +114,11 @@ if(!empty($_REQUEST)){
                  
                if($flagEdit == false)  {
                     echo  " <strong>" . $title  . "</strong> ";
-                   echo    '<form name="form_editFlag" method="POST" action="' . $_SERVER['PHP_SELF'] . '">  
+                    echo    '<form name="form_editFlag" method="GET" action="' . $_SERVER['PHP_SELF'] . '">  
 
                     <input type="hidden"  name="flagEdit" value="true">
-                    <input type="hidden"  name="id" value="' . $id . '">
 
-                    <button type="submit" id="editFlagsubmit" name="flagSubmit"  title="Edit" value="editFlag"><i class="fas fa-pencil-alt"></i></button> 
+                    <button type="submit" id="editFlagSubmit" name="flagSubmit"  title="Edit" value="editFlag"><i class="fas fa-pencil-alt"></i></button> 
                     </form> ' ;
                }
         else{
