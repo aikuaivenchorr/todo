@@ -12,9 +12,7 @@
          form{
              display: inline-block;
          }
-         button#delete{
-             border-style: none;
-         }
+       
     
     </style>
 </head>
@@ -85,7 +83,7 @@ $doneList = array();
  
   <input type="hidden"  name="deleteId" value="' . $id . '">
 
-  <button type="submit" id="delete" name="deleteSubmit"  title="Delete" value="delete">❌</button> </form> ' . 
+  <button type="submit" id="delete" name="deleteSubmit"  title="Delete" value="delete"><i class="fas fa-times"></i></button> </form> ' . 
                    $todo['priority'] . " " . " <strong>" . $todo['title'] . "</strong> " . " " . $todo['completed'] . " " .  $todo['createdBy'] . 
                    
                   
@@ -104,7 +102,35 @@ $doneList = array();
          }
 
           
-          //Adds new todo to database    
+           
+
+?>       
+         
+     </div> 
+      
+     <hr>
+     <h2>Done:</h2>
+     <div id="completed">
+ <?php 
+         //writes out all completed tasks
+            //var_dump($doneList);
+         
+         
+            foreach($doneList as $todo){
+                  $id = $todo['id'];
+                echo '<form name="form_delete_from_done" method="POST" action="' . $_SERVER['PHP_SELF'] . '">  
+ 
+  <input type="hidden"  name="deleteId" value="' . $id . '">
+
+  <button type="submit" id="delete" name="deleteSubmit"  title="Delete" value="delete"><i class="fas fa-times"></i></button> </form> ' 
+                    . $todo['priority'] . " <strong>" .  $todo['title'] . "</strong> " . ' <i class="fas fa-check"></i>' .  $todo['createdBy'] . "<hr>";
+             
+         }
+         
+         
+         
+ //actions        
+         
 if(!empty($_POST)){
     if(empty($_POST['completed']) && empty($_POST['deleteId'])  ){
         require 'partials/insert_new_todo.php';
@@ -120,22 +146,6 @@ if(!empty($_POST)){
     
 
 }
-?>       
-         
-     </div> 
-      
-     <hr>
-     <h2>Done:</h2>
-     <div id="completed">
-         <?php 
-         //writes out all completed tasks
-            //var_dump($doneList);
-         
-         
-            foreach($doneList as $todo){
-                echo $todo['priority'] . " <strong>" .  $todo['title'] . "</strong> " . ' <i class="fas fa-check"></i>' .  $todo['createdBy'] . "<hr>";
-             
-         }
  ?>   
      </div>
  
