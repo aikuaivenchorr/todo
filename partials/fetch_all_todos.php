@@ -1,6 +1,6 @@
 <?php
 
-require 'partials/db.php';
+require 'db.php';
     $statement = $pdo->prepare(
       "SELECT * FROM todo 
       ORDER BY id DESC;

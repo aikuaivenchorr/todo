@@ -7,6 +7,13 @@
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
      <link rel="stylesheet" href="css/style.css">
      <title>TODO LIST</title>
+     
+     <style>
+         button#delete{
+             border-style: none;
+         }
+    
+    </style>
 </head>
 <body>
   
@@ -71,11 +78,18 @@ $doneList = array();
             //var_dump($todoList);
          foreach($todoList as $todo){
               $currentTodo = $todo['title'];
-               echo $todo['priority'] . " " . " <strong>" . $todo['title'] . "</strong> " . " " . $todo['completed'] . " " .  $todo['createdBy'] . 
+             $id = $todo['id'];
+             
+             
+        echo   '<form name="todo_listing" method="POST" action="index.php">  
+ 
+  <input type="hidden"  name="deleteId" value="' . $id . '">
+
+  <button type="submit" id="delete" name="deleteSubmit"  title="Delete" value="delete">❌</button> ' . 
+                   $todo['priority'] . " " . " <strong>" . $todo['title'] . "</strong> " . " " . $todo['completed'] . " " .  $todo['createdBy'] . 
                    
                   
-                  '           <form name="checkbox_completed" action="index.php" method="POST">
-               <input type="hidden" value="' . $currentTodo . '" name="title" id="title">
+                  '<input type="hidden" value="' . $currentTodo . '" name="title" id="title">
                <input type="hidden" value="1" name="completed" id="completed">
                
                <input type="submit" value="Done!">
@@ -88,7 +102,6 @@ $doneList = array();
                    "<hr>";
              
          }
-          
       
     if(!empty($_POST)){
         var_dump($_POST);
@@ -96,12 +109,16 @@ $doneList = array();
           
           //Adds new todo to database    
 if(!empty($_POST)){
-    if(empty($_POST['completed'])){
+    if(empty($_POST['completed']) || empty($_POST['deleteId'])  ){
         require 'partials/insert_new_todo.php';
     }
 
-    elseif($_POST["completed"] == '1'){
+    elseif(empty($_POST['deleteId']) && $_POST["completed"] == '1'){
         require 'partials/check_as_done.php';
+    }
+    
+    else{
+        require 'partials/delete_todo.php';
     }
     
 
