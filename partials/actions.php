@@ -1,4 +1,5 @@
 <?php
+$notification = "";
 
 if(!empty($_POST)){
     if(empty($_POST['completed']) && empty($_POST['deleteId'])  ){
@@ -6,7 +7,8 @@ if(!empty($_POST)){
    
        if($statement){
           $published = "<br> Published!";
-           echo  $published;
+           $notification = $published;
+           
         }
     
     }
@@ -16,7 +18,8 @@ if(!empty($_POST)){
         
         if($statement){
            $done = "<br> Done!";
-           echo  $done;
+             $notification =  $done;
+          
         }
     }
     
@@ -25,9 +28,10 @@ if(!empty($_POST)){
         
         if($statement){
            $deleted = "<br> Deleted!";
-           echo  $deleted;
+             $notification = $deleted;
+         
         }
     }
-    
 
+echo $notification;
 }

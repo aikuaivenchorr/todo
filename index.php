@@ -1,6 +1,9 @@
 <?php
+
 if(!empty($_REQUEST)){
-   header('Location:' . $_SERVER['PHP_SELF']); 
+   header('Refresh: 3; URL=index.php');
+   // header('Location:' . $_SERVER['PHP_SELF']);
+
 }
 ?>
 <!DOCTYPE html>
@@ -53,6 +56,7 @@ if(!empty($_REQUEST)){
    <br><br>
    
 <?php 
+    
      require 'partials/fetch_all_todos.php';
     
     //  var_dump($todos);
@@ -133,7 +137,7 @@ if(!empty($_REQUEST)){
          
 //requires script that processes forms       
 require 'partials/actions.php';
-         
+
 ?>  
 
 </div>
