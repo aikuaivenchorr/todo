@@ -76,11 +76,11 @@ $doneList = array();
                   
                   '           <form name="checkbox_completed" action="index.php" method="POST">
                <input type="hidden" value="' . $currentTodo . '" name="title" id="title">
-               <input type="checkbox" value="1" name="completed" id="completed">
+               <input type="hidden" value="1" name="completed" id="completed">
                
-               <input type="submit" value="submit">
+               <input type="submit" value="Done!">
        </fieldset>
-   </form>' .
+   </form> ' .
                    
                    
                    
