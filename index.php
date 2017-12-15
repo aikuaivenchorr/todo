@@ -75,7 +75,7 @@ $doneList = array();
             //writes out all not completed tasks
             //var_dump($todoList);
          foreach($todoList as $todo){
-              $currentTodo = $todo['title'];
+           //   $currentTodo = $todo['title'];
              $id = $todo['id'];
              
              
@@ -87,7 +87,7 @@ $doneList = array();
                    $todo['priority'] . " " . " <strong>" . $todo['title'] . "</strong> " . " " . $todo['completed'] . " " .  $todo['createdBy'] . 
                    
                   
-                  '<form name="form_completed" method="POST" action="' . $_SERVER['PHP_SELF'] . '"> <input type="hidden" value="' . $currentTodo . '" name="title" id="title">
+                  '<form name="form_completed" method="POST" action="' . $_SERVER['PHP_SELF'] . '"> <input type="hidden" value="' . $id . '" name="id" id="title">
                <input type="hidden" value="1" name="completed" id="completed">
                
                <input type="submit" value="Done!">
@@ -144,9 +144,9 @@ if(!empty($_POST)){
         require 'partials/delete_todo.php';
     }
     
-
+header('Location: index.php');
 }
- ?>   
+?>  
      </div>
  
 </body>
