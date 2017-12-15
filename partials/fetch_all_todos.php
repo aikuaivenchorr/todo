@@ -1,19 +1,12 @@
 <?php
 
 require 'partials/db.php';
-if(isset($GET['sortByPriority']) && $GET['sortByPriority'] == true){
-    echo $GET['sortByPriority'];
-      echo "Urra! <br>";
     $statement = $pdo->prepare(
-      "SELECT * FROM todo"
+      "SELECT * FROM todo 
+      ORDER BY id DESC;
+      
+      "
     );
-}
-else{
-      echo "Hej <br>";
-$statement = $pdo->prepare(
-  "SELECT * FROM todo"
-);
-}
 
 
 $statement->execute();
