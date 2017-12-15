@@ -1,3 +1,8 @@
+<?php
+if(!empty($_POST)){
+   header('Location:' . $_SERVER['PHP_SELF']); 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -157,7 +162,7 @@ if(!empty($_POST)){
         }
     }
     
-header('Location:' . $_SERVER['PHP_SELF']);
+
 }
 ?>  
      </div>
