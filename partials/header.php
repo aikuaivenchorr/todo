@@ -20,6 +20,10 @@ if(!empty($_REQUEST) && empty($_GET['flagEdit'])){
          form{
              display: inline-block;
          }
+         
+         button, input[type='submit']{
+             cursor: pointer;
+         }
        
     
     </style>
