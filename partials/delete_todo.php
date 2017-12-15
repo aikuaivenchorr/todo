@@ -1,4 +1,4 @@
- <?php  
+<?php  
 
        $id =  $_POST['deleteId'];
        
@@ -8,8 +8,4 @@
             
     );
     $statement->execute();
-
-
- 
-
 

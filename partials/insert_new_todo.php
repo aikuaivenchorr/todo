@@ -1,4 +1,4 @@
-   <?php
+<?php
 
 
     require 'db.php';
@@ -13,15 +13,4 @@
           ":priority" => $_POST["priority"],
            ":createdBy" => $_POST["createdBy"]
     ));
-
-
-
-   //     if($pdo){
-   //         echo "Connected! ";
-    //    }
-    //    
-   //     if($statement){
-    //        echo "<br> Published!";
-   //     }
-    
  

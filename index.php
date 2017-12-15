@@ -21,17 +21,20 @@
   
  
    <?php
-
+$published = "";
 $todoList = array();
 $doneList = array();
 // $currentTodo = '';
 // $completedCheck = '';
 
+  
+    
     ?>
     
    
     
    <h1>TO DO LIST</h1>
+   
   <h2>What to do: </h2>
    <form name="todo_form" action="index.php" method="POST">
         <fieldset>
@@ -55,6 +58,7 @@ $doneList = array();
     
     //creates 2 array for not completed and completed todos
          foreach($todos as $todo){
+             
              if($todo['completed'] == 0){
                  
                  array_push($todoList, $todo);
@@ -84,7 +88,7 @@ $doneList = array();
   <input type="hidden"  name="deleteId" value="' . $id . '">
 
   <button type="submit" id="delete" name="deleteSubmit"  title="Delete" value="delete"><i class="fas fa-times"></i></button> </form> ' . 
-                   $todo['priority'] . " " . " <strong>" . $todo['title'] . "</strong> " . " " . $todo['completed'] . " " .  $todo['createdBy'] . 
+                   $todo['priority'] . " " . " <strong>" . $todo['title'] . "</strong> " . " " .  " " .  $todo['createdBy'] . 
                    
                   
                   '<form name="form_completed" method="POST" action="' . $_SERVER['PHP_SELF'] . '"> <input type="hidden" value="' . $id . '" name="id" id="title">
@@ -93,17 +97,10 @@ $doneList = array();
                <input type="submit" value="Done!">
      
    </form> ' .
-                   
-                   
-                   
-                   
+
                    "<hr>";
              
          }
-
-          
-           
-
 ?>       
          
      </div> 
@@ -123,7 +120,7 @@ $doneList = array();
   <input type="hidden"  name="deleteId" value="' . $id . '">
 
   <button type="submit" id="delete" name="deleteSubmit"  title="Delete" value="delete"><i class="fas fa-times"></i></button> </form> ' 
-                    . $todo['priority'] . " <strong>" .  $todo['title'] . "</strong> " . ' <i class="fas fa-check"></i>' .  $todo['createdBy'] . "<hr>";
+                    . $todo['priority'] . " <strong>" .  $todo['title'] . "</strong> " . ' <i class="fas fa-check"></i> ' .  $todo['createdBy'] . "<hr>";
              
          }
          
@@ -134,17 +131,33 @@ $doneList = array();
 if(!empty($_POST)){
     if(empty($_POST['completed']) && empty($_POST['deleteId'])  ){
         require 'partials/insert_new_todo.php';
+   
+       if($statement){
+          $published = "<br> Published!";
+           echo  $published;
+        }
+    
     }
 
     elseif(!empty($_POST["completed"]) && $_POST["completed"] == '1'){
         require 'partials/check_as_done.php';
+        
+        if($statement){
+           $done = "<br> Done!";
+           echo  $done;
+        }
     }
     
     elseif(!empty($_POST['deleteId'])){
         require 'partials/delete_todo.php';
+        
+        if($statement){
+           $deleted = "<br> Deleted!";
+           echo  $deleted;
+        }
     }
     
-header('Location: index.php');
+header('Location:' . $_SERVER['PHP_SELF']);
 }
 ?>  
      </div>

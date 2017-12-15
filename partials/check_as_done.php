@@ -1,4 +1,4 @@
- <?php  
+<?php  
 
        $currentId =  $_POST['id'];
            //var_dump ($current);
@@ -8,6 +8,3 @@
             
     );
     $statement->execute();
-
-
- // header('Location: index.php');
