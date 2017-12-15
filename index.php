@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>TODO LIST</title>
+   
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+     <link rel="stylesheet" href="css/style.css">
+     <title>TODO LIST</title>
 </head>
 <body>
   
@@ -13,23 +15,8 @@
    <?php
 $todoList = array();
 $doneList = array();
-    
-//Adds new todo to database    
-    if(!empty($_POST)){
-require 'partials/insert_new_todo.php';
-        if($pdo){
-            echo "Connected! ";
-        }
-        
-        if($statement){
-            echo "<br> Published!";
-        }
-
-}
-    
-    
-    
-    
+// $currentTodo = '';
+// $completedCheck = '';
 
     ?>
     
@@ -42,8 +29,7 @@ require 'partials/insert_new_todo.php';
             <legend>Add new todo:</legend>
                <label for="title">Title</label>
                <input type="text" name="title" id="title">
-               <label for="completed">Completed</label>
-               <input type="checkbox" value="1" name="completed" id="completed">
+               
                <label for="priority">Priority</label>
                <input type="number" name="priority" id="priority">
                <label for="createdBy">Author</label>
@@ -53,7 +39,7 @@ require 'partials/insert_new_todo.php';
    </form>
   <?php  
     if(!empty($_POST)){
-        //var_dump($_POST);
+        var_dump($_POST);
     }
   ?>    
    
@@ -84,9 +70,43 @@ require 'partials/insert_new_todo.php';
             //writes out all not completed tasks
             //var_dump($todoList);
          foreach($todoList as $todo){
-               echo $todo['priority'] . " " .  $todo['title'] . " " . $todo['completed'] . " " .  $todo['createdBy'] . "<hr>";
+              $currentTodo = $todo['title'];
+               echo $todo['priority'] . " " . " <strong>" . $todo['title'] . "</strong> " . " " . $todo['completed'] . " " .  $todo['createdBy'] . 
+                   
+                  
+                  '           <form name="checkbox_completed" action="index.php" method="POST">
+               <input type="hidden" value="' . $currentTodo . '" name="title" id="title">
+               <input type="checkbox" value="1" name="completed" id="completed">
+               
+               <input type="submit" value="submit">
+       </fieldset>
+   </form>' .
+                   
+                   
+                   
+                   
+                   "<hr>";
              
          }
+          
+      
+    if(!empty($_POST)){
+        var_dump($_POST);
+    }
+          
+          //Adds new todo to database    
+if(!empty($_POST)){
+require 'partials/insert_new_todo.php';
+        if($pdo){
+            echo "Connected! ";
+        }
+        
+        if($statement){
+            echo "<br> Published!";
+        }
+
+}
+    
          
       ?> 
          
@@ -102,7 +122,7 @@ require 'partials/insert_new_todo.php';
          
          
             foreach($doneList as $todo){
-                echo $todo['priority'] . " " .  $todo['title'] . " " . $todo['completed'] . " " .  $todo['createdBy'] . "<hr>";
+                echo $todo['priority'] . " <strong>" .  $todo['title'] . "</strong> " . ' <i class="fas fa-check"></i>' .  $todo['createdBy'] . "<hr>";
              
          }
          ?>   
