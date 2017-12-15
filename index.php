@@ -9,6 +9,9 @@
      <title>TODO LIST</title>
      
      <style>
+         form{
+             display: inline-block;
+         }
          button#delete{
              border-style: none;
          }
