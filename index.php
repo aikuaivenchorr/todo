@@ -20,6 +20,7 @@
   
  
    <?php
+
 $todoList = array();
 $doneList = array();
 // $currentTodo = '';
@@ -44,11 +45,7 @@ $doneList = array();
                <input type="submit" value="submit">
        </fieldset>
    </form>
-  <?php  
-    if(!empty($_POST)){
-        var_dump($_POST);
-    }
-  ?>    
+   <br><br>
    
   <?php 
      require 'partials/fetch_all_todos.php';
@@ -69,7 +66,7 @@ $doneList = array();
          }
          
          
-      ?> 
+      ?>
       
       
       <div id="not_completed">
@@ -81,19 +78,19 @@ $doneList = array();
              $id = $todo['id'];
              
              
-        echo   '<form name="todo_listing" method="POST" action="index.php">  
+        echo   '<form name="form_delete" method="POST" action="' . $_SERVER['PHP_SELF'] . '">  
  
   <input type="hidden"  name="deleteId" value="' . $id . '">
 
-  <button type="submit" id="delete" name="deleteSubmit"  title="Delete" value="delete">❌</button> ' . 
+  <button type="submit" id="delete" name="deleteSubmit"  title="Delete" value="delete">❌</button> </form> ' . 
                    $todo['priority'] . " " . " <strong>" . $todo['title'] . "</strong> " . " " . $todo['completed'] . " " .  $todo['createdBy'] . 
                    
                   
-                  '<input type="hidden" value="' . $currentTodo . '" name="title" id="title">
+                  '<form name="form_completed" method="POST" action="' . $_SERVER['PHP_SELF'] . '"> <input type="hidden" value="' . $currentTodo . '" name="title" id="title">
                <input type="hidden" value="1" name="completed" id="completed">
                
                <input type="submit" value="Done!">
-       </fieldset>
+     
    </form> ' .
                    
                    
@@ -102,33 +99,25 @@ $doneList = array();
                    "<hr>";
              
          }
-      
-    if(!empty($_POST)){
-        var_dump($_POST);
-    }
+
           
           //Adds new todo to database    
 if(!empty($_POST)){
-    if(empty($_POST['completed']) || empty($_POST['deleteId'])  ){
+    if(empty($_POST['completed']) && empty($_POST['deleteId'])  ){
         require 'partials/insert_new_todo.php';
     }
 
-    elseif(empty($_POST['deleteId']) && $_POST["completed"] == '1'){
+    elseif(!empty($_POST["completed"]) && $_POST["completed"] == '1'){
         require 'partials/check_as_done.php';
     }
     
-    else{
+    elseif(!empty($_POST['deleteId'])){
         require 'partials/delete_todo.php';
     }
     
 
 }
-          
-
-    
-         
-      ?> 
-         
+?>       
          
      </div> 
       
@@ -144,7 +133,7 @@ if(!empty($_POST)){
                 echo $todo['priority'] . " <strong>" .  $todo['title'] . "</strong> " . ' <i class="fas fa-check"></i>' .  $todo['createdBy'] . "<hr>";
              
          }
-         ?>   
+ ?>   
      </div>
  
 </body>
