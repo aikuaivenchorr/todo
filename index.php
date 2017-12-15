@@ -56,31 +56,47 @@ require 'partials/insert_new_todo.php';
         //var_dump($_POST);
     }
   ?>    
-      <div id="not_completed">
-         
-         
-     </div>    
+   
   <?php 
      require 'partials/fetch_all_todos.php';
     
     //  var_dump($todos);
+    
+    //creates 2 array for not completed and completed todos
          foreach($todos as $todo){
              if($todo['completed'] == 0){
-              echo $todo['priority'] . " " .  $todo['title'] . " " . $todo['completed'] . " " .  $todo['createdBy'] . "<hr>";
+                 
+                 array_push($todoList, $todo);
+             
              }
              
              elseif($todo['completed'] == 1) {
-                 echo "got 1" . "<hr>";
+                 array_push($doneList, $todo);
              }
          }
          
          
       ?> 
+      
+      
+      <div id="not_completed">
+        <?php  
+            //writes out all not completed tasks
+            //var_dump($todoList);
+         
+         
+      ?> 
+         
+         
+     </div> 
+      
      <hr>
      <h2>Done:</h2>
      <div id="completed">
-         
-         
+         <?php 
+         //writes out all completed tasks
+            //var_dump($doneList);
+         ?>   
      </div>
  
 </body>
