@@ -13,8 +13,15 @@
     $todoList = array();
     $doneList = array();
 
+if(!empty($_GET['sortByPriority']) && $_GET['sortByPriority'] == true){
+     require 'partials/order_by_priority.php';
 
+        }
+else
+{    
      require 'partials/fetch_all_todos.php';
+   
+}
     
     //creates 2 array for not completed and completed todos
     require 'partials/sorting_completed_and_not_completed_todos.php';
