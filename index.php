@@ -35,12 +35,14 @@ else
 <h1><a href="index.php">TO DO LIST</a></h1>  
    
 <?php
+   
     require 'partials/add_new_task.php';
 ?> 
    <br><br>
    
 <?php
     require 'partials/todo_listing.php';
+    
 ?> 
       
 

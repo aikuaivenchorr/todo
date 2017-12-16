@@ -19,6 +19,7 @@
 
                     <button type="submit" id="edit" name="editSubmit"  title="Edit" value="edit"><i class="fas fa-check"></i></button> 
                     </form> ';
+        
              echo    $todo['priority']
                     . " " ;
         
@@ -73,9 +74,9 @@
  
                   
                  
-                //  echo  $todo['createdBy']; 
-                
-
+               $author =  $todo['createdBy']; 
+               echo    $author 
+   . " " ;
 
               echo "<hr>";
 
