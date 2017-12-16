@@ -2,7 +2,7 @@
 
 require 'db.php';
 
-    if($_GET['sortByPriority'] == true){
+    if(!empty($_GET['sortByPriority']) && $_GET['sortByPriority'] == true){
       $statement = $pdo->prepare(
       "SELECT * FROM todo 
       ORDER BY priority ASC;
