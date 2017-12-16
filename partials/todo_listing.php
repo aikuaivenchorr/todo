@@ -3,7 +3,11 @@
 <?php  
     
     //writes out all not completed tasks
-    
+    $_GET['sortByPriority'] = false;
+    echo '<a href ="index.php?sortByPriority=true">Sort by priority</a> <br><br>';
+
+        
+        
     foreach($todoList as $todo){
             $id = $todo['id'];
             $title = $todo['title'];
@@ -15,15 +19,17 @@
 
                     <button type="submit" id="edit" name="editSubmit"  title="Edit" value="edit"><i class="fas fa-check"></i></button> 
                     </form> ';
+             echo    $todo['priority']
+                    . " " ;
+        
              echo  '<form name="form_delete" method="POST" action="' . $_SERVER['PHP_SELF'] . '">  
 
                     <input type="hidden"  name="deleteId" value="' . $id . '">
 
                     <button type="submit" id="delete" name="deleteSubmit"  title="Delete" value="delete"><i class="fas fa-times"></i></button> 
-                    </form> ' 
+                    </form> ' ;
                  
-                    . $todo['priority'] 
-                    . " " ;
+              
                  
                if($flagEdit == false)  {
                     echo  " <strong>" . $title  . "</strong> ";

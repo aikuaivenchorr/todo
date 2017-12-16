@@ -11,10 +11,10 @@
  
                   <input type="hidden"  name="deleteId" value="' . $id . '">
 
-                  <button type="submit" id="delete" name="deleteSubmit"  title="Delete" value="delete"><i class="fas fa-times"></i></button> </form> ' 
+                  <button type="submit" id="delete" name="deleteSubmit"  title="Delete" value="delete"><i class="fas fa-times"></i></button> </form> ' ;
                     
-                  . $todo['priority'] . 
-                    " <strong> <strike>"  .  $todo['title'] . " </strike></strong> ";
+                //  echo $todo['priority']; 
+                  echo   " <strong> <strike>"  .  $todo['title'] . " </strike></strong> ";
                  //   echo ' <i class="fas fa-check"></i> ';
                 // echo  $todo['createdBy'];
                 echo "<hr>";
