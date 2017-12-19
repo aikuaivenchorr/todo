@@ -6,8 +6,9 @@
     $_GET['sortByPriority'] = false;
     echo '<a href ="index.php?sortByPriority=true">Sort by priority</a> <br><br>';
 
-        
-        
+
+
+      
     foreach($todoList as $todo){
             $id = $todo['id'];
             $title = $todo['title'];
@@ -19,7 +20,7 @@
 
                     <button type="submit" id="edit" name="editSubmit"  title="Edit" value="edit"><i class="fas fa-check"></i></button> 
                     </form> ';
-        
+           
              echo    $todo['priority']
                     . " " ;
         
@@ -29,10 +30,11 @@
 
                     <button type="submit" id="delete" name="deleteSubmit"  title="Delete" value="delete"><i class="fas fa-times"></i></button> 
                     </form> ' ;
-                echo  " <strong>" . $title  . "</strong> ";   
+                
               
           
                if($flagEdit == false)  {
+                    echo  " <strong>" . $title  . "</strong> ";  
                   
                     echo    '<form name="form_editFlag" method="GET" action="' . $_SERVER['PHP_SELF'] . '">  
 
@@ -41,29 +43,33 @@
                     <button type="submit" id="editFlagSubmit" name="flagSubmit"  title="Edit" value="editFlag"><i class="fas fa-pencil-alt"></i></button> 
                     </form> ' ;
 
-                 echo  '<form name="form_completed" method="POST" action="' . $_SERVER['PHP_SELF'] . '"> <input type="hidden" value="' . $id . '" name="id" id="title">
-                  <input type="hidden" value="1" name="completed" id="completed">
+                     echo  '<form name="form_completed" method="POST" action="' . $_SERVER['PHP_SELF'] . '"> <input type="hidden" value="' . $id . '" name="id" id="title">
+                      <input type="hidden" value="1" name="completed" id="completed">
 
-                  <input type="submit" value="Done!">
+                      <input type="submit" value="Done!">
 
-                  </form> ' ;
+                      </form> ' ;
                    
                    
  
                }
-           if($flagEdit == true && !empty($_GET['id']) && $_GET['id'] == $id ){
-                echo $editField . " ";
-              
+        
+                 elseif($flagEdit == true && !empty($_GET['id'])) {
+                   if($_GET['id'] == $id ){
+                        echo $editField . " ";
 
-            }
-        else if($flagEdit == true && !empty($_GET['id']) && $_GET['id'] != $id ){
-                               echo    '<form name="form_editFlag" method="GET" action="' . $_SERVER['PHP_SELF'] . '">  
 
-                    <input type="hidden"  name="flagEdit" value="true">
-                    <input type="hidden"  name="id" value="' . $id . '">
-                    <button type="submit" id="editFlagSubmit" name="flagSubmit"  title="Edit" value="editFlag"><i class="fas fa-pencil-alt"></i></button> 
-                    </form> ' ;
-        }
+                    }
+                    else if($_GET['id'] != $id ){
+                              echo  " <strong>" . $title  . "</strong> ";  
+                                echo    '<form name="form_editFlag" method="GET" action="' . $_SERVER['PHP_SELF'] . '">  
+
+                                <input type="hidden"  name="flagEdit" value="true">
+                                <input type="hidden"  name="id" value="' . $id . '">
+                                <button type="submit" id="editFlagSubmit" name="flagSubmit"  title="Edit" value="editFlag"><i class="fas fa-pencil-alt"></i></button> 
+                                </form> ' ;
+                    }
+         }
         
         
                  
@@ -75,8 +81,7 @@
                   
                  
                $author =  $todo['createdBy']; 
-               echo    $author 
-   . " " ;
+               echo    $author;
 
               echo "<hr>";
 
