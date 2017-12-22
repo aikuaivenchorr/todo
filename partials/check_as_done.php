@@ -1,10 +1,9 @@
 <?php  
-
-       $currentId =  $_POST['id'];
-           //var_dump ($current);
+    $currentId =  $_POST['id'];
       
-         $statement = $pdo->prepare(
+    $statement = $pdo->prepare(
       "UPDATE `todo` SET `completed`='1' WHERE `id`= '$currentId' "
             
     );
+
     $statement->execute();

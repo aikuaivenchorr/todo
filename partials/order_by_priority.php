@@ -4,7 +4,6 @@ require 'db.php';
     $statement = $pdo->prepare(
       "SELECT * FROM `todo` 
       ORDER BY `todo`.`priority` ASC;
-      
       "
     );
 

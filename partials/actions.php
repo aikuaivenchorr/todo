@@ -1,4 +1,7 @@
 <?php
+
+//creates notification of actions 
+
 $notification = "";
 
 
@@ -9,9 +12,9 @@ if(!empty($_POST)){
         foreach($todoList as $todo){
                 if($todo['title'] ==  $title ){
 
-                     echo "Can't add 2 similar titles! Change name of todo, please!";
+                     $notification = "Can't add 2 similar titles! Change name of todo, please!";
                      $doubleTitle = true;
-                    break;
+                     break;
                 }
 
             }
@@ -19,7 +22,7 @@ if(!empty($_POST)){
             if($doubleTitle != true){
               require 'insert_new_todo.php';
                   if($statement){
-                      $published = "<br> Published!";
+                      $published = "Published!";
                       $notification = $published;
                     }
         }
@@ -31,7 +34,7 @@ if(!empty($_POST)){
         require 'check_as_done.php';
         
         if($statement){
-           $done = "<br> Done!";
+           $done = "Done!";
            $notification =  $done;
           
         }
@@ -41,7 +44,7 @@ if(!empty($_POST)){
         require 'delete_todo.php';
         
         if($statement){
-           $deleted = "<br> Deleted!";
+           $deleted = "Deleted!";
            $notification = $deleted;
          
         }
@@ -51,12 +54,13 @@ if(!empty($_POST)){
         require 'edit_todo.php';
         
         if($statement){
-           $edited = "<br> Edited!";
+           $edited = "Edited!";
            $notification = $edited;
          
         }
     }
+// shows notification according to relevant event (published, edited, done or deleted)
 
-echo '<div class="notification">' . $notification . '</div>';
+echo '<div class="notification"><p>' . $notification . '</p></div>';
 
 }
