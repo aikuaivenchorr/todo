@@ -30,7 +30,7 @@
                  //   echo ' <i class="fas fa-check"></i> ';
                  // echo  $todo['createdBy'];
                   echo '</tr>';
-                 echo "<hr>";
+               
 
             }
 ?>

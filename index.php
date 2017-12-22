@@ -41,18 +41,18 @@ else
  <main>  
 <?php
    
-    require 'partials/add_new_task.php';
+    require_once 'partials/add_new_task.php';
 ?> 
  
    
 <?php
-    require 'partials/todo_listing.php';
+    require_once 'partials/todo_listing.php';
     
 ?> 
       
 
 
- <hr>
+
  
  <?php
 //requires listing of completed tasks       

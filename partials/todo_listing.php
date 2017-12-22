@@ -9,8 +9,9 @@
    <tr>  <th colspan="6"><h2>What to do:</h2></th></tr>
     <tr>
      
-      <th id="priority"><?php //sorts tasks by priority
-   
+      <th id="priority">
+      
+      <?php //sorts tasks by priority
     echo '<a href ="index.php?sortByPriority=true#priority">Sort by priority</a> <br>'; ?>
      Priority   
      </th>
@@ -75,7 +76,7 @@
 
 
                     }
-                    else if($_GET['id'] != $id ){
+                    elseif($_GET['id'] != $id ){
                         echo  " <td><strong>" . $title  . "</strong> </td>";  
                         echo    '<td><form name="form_editFlag" method="GET" action="' . $_SERVER['PHP_SELF'] . '">  
 
@@ -89,8 +90,8 @@
          }
         
 
-               echo '<tr>';
-               echo "<hr>";
+               echo '</tr>';
+            
 
     }
       
