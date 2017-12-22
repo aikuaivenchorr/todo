@@ -29,7 +29,7 @@
             $id = $todo['id'];
             $title = $todo['title'];
   
-            $editField = '<form name="form_edit" method="POST" action="' . $_SERVER['PHP_SELF'] . '">  
+            $editField = '<form id="edit" name="form_edit" method="POST" action="' . $_SERVER['PHP_SELF'] . '#edit">  
 
             <input type=""  name="editTitle" value="' . $title . '">
             <input type="hidden"  name="id" value="' . $id . '">
@@ -51,7 +51,7 @@
                if($flagEdit == false)  {
                     echo  " <td><strong>" . $title  . "</strong> </td>";  
                   
-                    echo    '<td><form name="form_editFlag" method="GET" action="' . $_SERVER['PHP_SELF'] . '">  
+                    echo    '<td><form name="form_editFlag" method="GET" action="' . $_SERVER['PHP_SELF'] . '#edit">  
 
                     <input type="hidden"  name="flagEdit" value="true">
                     <input type="hidden"  name="id" value="' . $id . '">
@@ -73,7 +73,7 @@
                     }
                     elseif($_GET['id'] != $id ){
                         echo  " <td><strong>" . $title  . "</strong> </td>";  
-                        echo    '<td><form name="form_editFlag" method="GET" action="' . $_SERVER['PHP_SELF'] . '">  
+                        echo    '<td><form name="form_editFlag" method="GET" action="' . $_SERVER['PHP_SELF'] . '#edit">  
 
                         <input type="hidden"  name="flagEdit" value="true">
                         <input type="hidden"  name="id" value="' . $id . '">
