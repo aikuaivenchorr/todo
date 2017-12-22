@@ -1,12 +1,101 @@
+h1 {
+             text-align: center;
+            font-size: 4em;
+            line-height: 1em;
+             width: 100%;
+             padding: 2em;
+            background-color: cadetblue;
+         }
+         h1 a{
+             color: azure;
+         }
+         h1 a:hover{
+            color: firebrick;
+         }
+         
+         form{
+             display: inline-block;
+         }
+         
+         #add_todo{
+             margin: 1em;
+         }
+         
+         #add_todo legend{
+             padding: 1em;
+             font-size: 2em;
+             font-weight: 500;
+             color: darkblue
+            
+         }
+         
+         button, input[type='submit']{
+             cursor: pointer;
+             color: firebrick;
+         }
+         
 
+ a {
+    color: firebrick;
+}
+         body{
+             background-color: bisque;
+             margin: 0;
+          
+         }
+         
+         main{
+             padding: 0 1em;
+         }
 
-
- form{
-     display: inline-block;
- }
-
- button, input[type='submit']{
-     cursor: pointer;
- }
+         
+        th{
+       
+            font-size: 1.4em;
+            color: azure;
+         
+            background-color: cadetblue;
+         }
+         
+         td{
+             color: cadetblue;
+             font-size: 1.2em;
+       
+       }
+         
+         #completed  th{
+ 
+            color: azure;
+            background-color: dimgrey;
+         }
+         
+        #completed td{
+               color: forestgreen;
+           }
+         
+                  
+         table#todo{
+             background-color: cornsilk;
+         }
+         
+        table#done{
+             background-color: lightgray;
+         }
+         
+        footer{
+            width: 100%;
+             text-align: center;
+         }
+         
+         p.footer{
+             display: inline-block;
+             width: 100%;
+             padding: 3em;
+             height: 4em;
+             line-height: 2em;
+             font-size: 1.2em;
+             background-color: cadetblue;
+             text-decoration: underline;
+         }
        
     

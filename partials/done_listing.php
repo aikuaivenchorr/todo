@@ -2,7 +2,7 @@
  
 <div id="completed">
  
-<table class="table table-striped">
+<table class="table table-striped" id="done" >
     
       <thead>
            

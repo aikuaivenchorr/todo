@@ -4,7 +4,7 @@
      $_GET['sortByPriority'] = false;
  
 ?>
-<table class="table table-striped">
+<table class="table table-striped" id="todo" >
   <thead>
    <tr>  <th colspan="6"><h2>What to do:</h2></th></tr>
     <tr>
