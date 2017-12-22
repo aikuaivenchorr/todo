@@ -6,6 +6,8 @@
   
  
 <?php
+    
+    
     //depending on value invariabl flagEdit shows button with pencil or editable title in input field
   require 'partials/show_title_or_edit_title.php';
     
