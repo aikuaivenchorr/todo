@@ -25,7 +25,7 @@ h1 {
              padding: 1em;
              font-size: 2em;
              font-weight: 500;
-             color: darkblue
+             color: cadetblue;
             
          }
          
@@ -75,7 +75,7 @@ h1 {
          
                   
          table#todo{
-             background-color: cornsilk;
+             background-color: navajowhite;
          }
          
         table#done{
