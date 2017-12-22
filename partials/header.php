@@ -23,12 +23,18 @@ if(!empty($_REQUEST) && empty($_GET['flagEdit']) && empty($_GET['sortBEdit'])){
          
          
          h1 {
+             text-align: center;
             font-size: 4em;
-            line-height: 2em;
+            line-height: 1em;
+             width: 100%;
+             padding: 2em;
+            background-color: cadetblue;
          }
-         
+         h1 a{
+             color: azure;
+         }
          h1 a:hover{
-            color: cadetblue;
+            color: firebrick;
          }
          
          form{
@@ -57,9 +63,15 @@ if(!empty($_REQUEST) && empty($_GET['flagEdit']) && empty($_GET['sortBEdit'])){
     color: firebrick;
 }
          body{
-             margin: 3em;
+             background-color: bisque;
+             margin: 0;
+          
          }
          
+         main{
+             padding: 0 3em;
+         }
+ 
          
         th{
        
@@ -78,7 +90,7 @@ if(!empty($_REQUEST) && empty($_GET['flagEdit']) && empty($_GET['sortBEdit'])){
          #completed  th{
  
             color: azure;
-            background-color:dimgrey;
+            background-color: dimgrey;
          }
          
         #completed td{
@@ -91,8 +103,14 @@ if(!empty($_REQUEST) && empty($_GET['flagEdit']) && empty($_GET['sortBEdit'])){
          }
          
          p.footer{
+             display: inline-block;
+             width: 100%;
+             padding: 3em;
+             height: 4em;
+             line-height: 2em;
              font-size: 1.2em;
-             
+             background-color: cadetblue;
+             text-decoration: underline;
          }
     </style>
 </head>

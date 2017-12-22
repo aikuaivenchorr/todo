@@ -32,10 +32,13 @@ else
          
          
 ?>
-      
-<main>  
+<header>       
+ 
 <h1><a href="index.php">TO DO LIST</a></h1>  
-   
+
+</header>
+
+ <main>  
 <?php
    
     require 'partials/add_new_task.php';
