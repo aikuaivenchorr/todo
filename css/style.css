@@ -1,9 +1,9 @@
 h1 {
-             text-align: center;
+            text-align: center;
             font-size: 4em;
             line-height: 1em;
-             width: 100%;
-             padding: 2em;
+            width: 100%;
+            padding: 2em;
             background-color: cadetblue;
          }
          h1 a{
@@ -28,15 +28,37 @@ h1 {
              color: cadetblue;
             
          }
+
+         
+         #add_todo label{
+             margin: 1em;
+             font-size: 1.1em;
+             font-weight: 500;
+             color: cadetblue;
+            
+         }
+
+        #add_todo input[type='submit']{
+             margin-left: 1em;
+         }
          
          button, input[type='submit']{
              cursor: pointer;
              color: firebrick;
          }
+
+        input[type='text'], input[type='number']{
+             color: firebrick;
+             padding: 0.2em;
+         }
          
 
  a {
     color: firebrick;
+}
+
+a:hover{
+   color: navajowhite;
 }
          body{
              background-color: bisque;
