@@ -25,7 +25,7 @@ h1 {
              padding: 1em;
              font-size: 2em;
              font-weight: 500;
-             color: cadetblue;
+             color: firebrick;
             
          }
 
@@ -34,7 +34,7 @@ h1 {
              margin: 1em;
              font-size: 1.1em;
              font-weight: 500;
-             color: cadetblue;
+             color: steelblue;
             
          }
 
@@ -80,8 +80,8 @@ a:hover{
          }
          
          td{
-             color: cadetblue;
-             font-size: 1.2em;
+             color: steelblue;
+             font-size: 1.3em;
        
        }
          
