@@ -57,6 +57,6 @@ if(!empty($_POST)){
         }
     }
 
-echo $notification;
+echo '<div class="notification">' . $notification . '</div>';
 
 }

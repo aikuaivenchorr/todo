@@ -1,7 +1,7 @@
 <?php
 //Redirect with getting new data from database. Prevents redirect while editing todo title
 if(!empty($_REQUEST) && empty($_GET['flagEdit']) && empty($_GET['sortBEdit'])  && empty($_GET['sortByPriority'])){
-  header('Refresh: 2; URL=index.php');
+  header('Refresh: 3; URL=index.php');
    // header('Location:' . $_SERVER['PHP_SELF']);
 
 }
