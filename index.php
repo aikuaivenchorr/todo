@@ -40,7 +40,7 @@ else
    
     require 'partials/add_new_task.php';
 ?> 
-   <br><br>
+ 
    
 <?php
     require 'partials/todo_listing.php';

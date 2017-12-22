@@ -1,4 +1,3 @@
-<h2>What to do: </h2>
 <!--  Adds new task to do -->
    <form name="todo_form" action="index.php" method="POST">
         <fieldset>

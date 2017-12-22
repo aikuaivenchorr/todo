@@ -29,7 +29,7 @@ if(!empty($_REQUEST) && empty($_GET['flagEdit']) && empty($_GET['sortBEdit'])){
          }
          
  a {
-    color: red;
+    color: firebrick;
 }
          body{
              margin: 3em;
@@ -49,5 +49,15 @@ if(!empty($_REQUEST) && empty($_GET['flagEdit']) && empty($_GET['sortBEdit'])){
              font-size: 1.2em;
        
        }
+         
+        footer{
+            width: 100%;
+             text-align: center;
+         }
+         
+         p.footer{
+             font-size: 1.2em;
+             
+         }
     </style>
 </head>

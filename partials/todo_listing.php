@@ -2,19 +2,23 @@
 
 <?php  
      $_GET['sortByPriority'] = false;
-    //sorts tasks by priority
-   
-    echo '<a href ="index.php?sortByPriority=true">Sort by priority</a> <br><br>';
+ 
 ?>
 <table class="table table-striped">
   <thead>
+   <tr>  <th colspan="6"><h2>What to do:</h2></th></tr>
     <tr>
-      <th>Priority</th>
+     
+      <th id="priority"><?php //sorts tasks by priority
+   
+    echo '<a href ="index.php?sortByPriority=true#priority">Sort by priority</a> <br>'; ?>
+     Priority   
+     </th>
       <th>Delete</th>
       <th>To do</th>
       <th>Edit</th>
-       <th>Done</th>
-        <th>Whose task</th>
+      <th>Done</th>
+      <th>Whose task</th>
     </tr>
   </thead>
   <tbody>
@@ -31,7 +35,7 @@
 
                     <button type="submit" id="edit" name="editSubmit"  title="Edit" value="edit"><i class="fas fa-check"></i></button> 
                     </form> ';
-            echo '<tr>';
+             echo '<tr>';
              echo   '<td>' . $todo['priority'] . '</td>' 
                     . " " ;
         
@@ -83,18 +87,12 @@
          }
         
         
-                 
-                 
-      
-              
-        
- 
-                  
+
                  
                $author =  $todo['createdBy']; 
                echo   "<td> ". $author . "'s</td>";
-    echo '<tr>';
-              echo "<hr>";
+               echo '<tr>';
+               echo "<hr>";
 
     }
       
