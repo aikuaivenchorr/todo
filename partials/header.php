@@ -20,14 +20,39 @@ if(!empty($_REQUEST) && empty($_GET['flagEdit']) && empty($_GET['sortBEdit'])){
      <title>TODO LIST</title>
      
      <style>
+         
+         
+         h1 {
+            font-size: 4em;
+            line-height: 2em;
+         }
+         
+         h1 a:hover{
+            color: cadetblue;
+         }
+         
          form{
              display: inline-block;
          }
          
-         button, input[type='submit']{
-             cursor: pointer;
+         #add_todo{
+             margin: 1em;
          }
          
+         #add_todo legend{
+             padding: 1em;
+             font-size: 2em;
+             font-weight: 500;
+             color: darkblue
+            
+         }
+         
+         button, input[type='submit']{
+             cursor: pointer;
+             color: firebrick;
+         }
+         
+
  a {
     color: firebrick;
 }
@@ -39,7 +64,7 @@ if(!empty($_REQUEST) && empty($_GET['flagEdit']) && empty($_GET['sortBEdit'])){
         th{
        
             font-size: 1.4em;
-            color:azure;
+            color: azure;
          
             background-color: cadetblue;
          }
@@ -49,6 +74,16 @@ if(!empty($_REQUEST) && empty($_GET['flagEdit']) && empty($_GET['sortBEdit'])){
              font-size: 1.2em;
        
        }
+         
+         #completed  th{
+ 
+            color: azure;
+            background-color:darkgray;
+         }
+         
+        #completed td{
+               color: green;
+           }
          
         footer{
             width: 100%;

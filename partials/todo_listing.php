@@ -30,14 +30,13 @@
   
             $editField = '<form name="form_edit" method="POST" action="' . $_SERVER['PHP_SELF'] . '">  
 
-                    <input type=""  name="editTitle" value="' . $title . '">
-                    <input type="hidden"  name="id" value="' . $id . '">
+            <input type=""  name="editTitle" value="' . $title . '">
+            <input type="hidden"  name="id" value="' . $id . '">
 
-                    <button type="submit" id="edit" name="editSubmit"  title="Edit" value="edit"><i class="fas fa-check"></i></button> 
-                    </form> ';
+            <button type="submit" id="edit" name="editSubmit"  title="Edit" value="edit"><i class="fas fa-check"></i></button> 
+            </form> ';
              echo '<tr>';
-             echo   '<td>' . $todo['priority'] . '</td>' 
-                    . " " ;
+             echo   '<td>' . $todo['priority'] . '</td>' ;
         
              echo  '<td><form name="form_delete" method="POST" action="' . $_SERVER['PHP_SELF'] . '">  
 
@@ -65,7 +64,8 @@
 
                       </form> </td>' ;
                    
-                   
+                                $author =  $todo['createdBy']; 
+                                echo   "<td> ". $author . "'s</td>";
  
                }
         
@@ -76,21 +76,19 @@
 
                     }
                     else if($_GET['id'] != $id ){
-                              echo  " <td><strong>" . $title  . "</strong> </td>";  
-                                echo    '<td><form name="form_editFlag" method="GET" action="' . $_SERVER['PHP_SELF'] . '">  
+                        echo  " <td><strong>" . $title  . "</strong> </td>";  
+                        echo    '<td><form name="form_editFlag" method="GET" action="' . $_SERVER['PHP_SELF'] . '">  
 
-                                <input type="hidden"  name="flagEdit" value="true">
-                                <input type="hidden"  name="id" value="' . $id . '">
-                                <button type="submit" id="editFlagSubmit" name="flagSubmit"  title="Edit" value="editFlag"><i class="fas fa-pencil-alt"></i></button> 
-                                </form> </td>' ;
+                        <input type="hidden"  name="flagEdit" value="true">
+                        <input type="hidden"  name="id" value="' . $id . '">
+                        <button type="submit" id="editFlagSubmit" name="flagSubmit"  title="Edit" value="editFlag"><i class="fas fa-pencil-alt"></i></button> 
+                        </form> </td>' ;
+                                
+
                     }
          }
         
-        
 
-                 
-               $author =  $todo['createdBy']; 
-               echo   "<td> ". $author . "'s</td>";
                echo '<tr>';
                echo "<hr>";
 

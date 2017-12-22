@@ -1,5 +1,5 @@
 <!--  Adds new task to do -->
-   <form name="todo_form" action="index.php" method="POST">
+   <form id="add_todo" name="todo_form" action="index.php" method="POST">
         <fieldset>
             <legend>Add new todo:</legend>
                <label for="title">Title</label>
