@@ -78,11 +78,11 @@ if(!empty($_REQUEST) && empty($_GET['flagEdit']) && empty($_GET['sortBEdit'])){
          #completed  th{
  
             color: azure;
-            background-color:darkgray;
+            background-color:dimgrey;
          }
          
         #completed td{
-               color: green;
+               color: forestgreen;
            }
          
         footer{
