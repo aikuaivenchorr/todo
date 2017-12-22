@@ -58,21 +58,16 @@
                     <button type="submit" id="editFlagSubmit" name="flagSubmit"  title="Edit" value="editFlag"><i class="fas fa-pencil-alt"></i></button> 
                     </form> </td>' ;
 
-                     echo  '<td><form name="form_completed" method="POST" action="' . $_SERVER['PHP_SELF'] . '"> <input type="hidden" value="' . $id . '" name="id" id="title">
-                      <input type="hidden" value="1" name="completed" id="completed">
-
-                      <input type="submit" value="Done!">
-
-                      </form> </td>' ;
+                    
                    
-                                $author =  $todo['createdBy']; 
-                                echo   "<td> ". $author . "'s</td>";
+
  
                }
         
                  elseif($flagEdit == true && !empty($_GET['id'])) {
                    if($_GET['id'] == $id ){
                         echo '<td>' . $editField . "</td> ";
+                        echo '<td>' . '<- edit' . "</td> ";
 
 
                     }
@@ -89,7 +84,14 @@
                     }
          }
         
+         echo  '<td><form name="form_completed" method="POST" action="' . $_SERVER['PHP_SELF'] . '"> <input type="hidden" value="' . $id . '" name="id" id="title">
+                      <input type="hidden" value="1" name="completed" id="completed">
 
+                      <input type="submit" value="Done!">
+
+                      </form> </td>' ;
+                                $author =  $todo['createdBy']; 
+                                echo   "<td> ". $author . "'s</td>";
                echo '</tr>';
             
 
