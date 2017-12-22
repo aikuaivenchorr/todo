@@ -14,6 +14,7 @@
       <th>To do</th>
       <th>Edit</th>
        <th>Done</th>
+        <th>Whose task</th>
     </tr>
   </thead>
   <tbody>
@@ -31,7 +32,7 @@
                     <button type="submit" id="edit" name="editSubmit"  title="Edit" value="edit"><i class="fas fa-check"></i></button> 
                     </form> ';
             echo '<tr>';
-             echo   '<th scope="row">' . $todo['priority'] . '</th>' 
+             echo   '<td>' . $todo['priority'] . '</td>' 
                     . " " ;
         
              echo  '<td><form name="form_delete" method="POST" action="' . $_SERVER['PHP_SELF'] . '">  
@@ -91,7 +92,7 @@
                   
                  
                $author =  $todo['createdBy']; 
-               echo   '<td>' . $author . '</td>';
+               echo   "<td> ". $author . "'s</td>";
     echo '<tr>';
               echo "<hr>";
 
