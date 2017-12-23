@@ -4,7 +4,7 @@
     
       <thead>
            
-          <tr>  <th colspan="2"><h2>Done:</h2></th></tr>
+          <tr>  <th colspan="2" class="text-center"><h2>Done:</h2></th></tr>
             <tr>
                <th>Delete</th>
                <th>Task</th>

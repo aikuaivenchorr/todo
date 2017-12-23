@@ -8,7 +8,7 @@
 <table class="table table-striped" id="todo" >
     <thead>
         <tr>  
-            <th colspan="6"><h2>What to do:</h2></th>
+            <th colspan="6" class="text-center"><h2>What to do:</h2></th>
         </tr>
         <tr>
             <th id="priority">
