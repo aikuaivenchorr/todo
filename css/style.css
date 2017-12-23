@@ -1,18 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Handlee');
+
+body {
+    font-family: 'Handlee', cursive;
+    font-size: 1.2em;
+    background-color: bisque;
+    margin: 0;
+}
+
 h1 {
     text-align: center;
     font-size: 4em;
     line-height: 1em;
     width: 100%;
     padding: 2em;
-    background-color: cadetblue;
+    background-color: steelblue;
+    background-image: url(../images/business.jpg);
 }
 
 h1 a {
-    color: firebrick;
+    color: red;
+    text-shadow: 4px 4px darkslategray;
 }
 
 h1 a:hover {
-    color: red;
+    color: firebrick;
 }
 
 form {
@@ -58,18 +69,14 @@ input[type='number'] {
 
 
 a {
-    color: firebrick;
+    color: darksalmon;
+    font-size: 1.1em;
 }
 
 a:hover {
-    color: red;
+    color: firebrick;
 }
 
-body {
-    background-color: bisque;
-    margin: 0;
-
-}
 
 main {
     padding: 0 1em;
@@ -80,8 +87,7 @@ th {
 
     font-size: 1.4em;
     color: azure;
-
-    background-color: cadetblue;
+    background-color: #568499;
 }
 
 td {
@@ -91,13 +97,12 @@ td {
 }
 
 #completed th {
-
     color: azure;
     background-color: dimgrey;
 }
 
 #completed td {
-    color: forestgreen;
+    color: seagreen;
 }
 
 
@@ -112,6 +117,9 @@ table#done {
 footer {
     width: 100%;
     text-align: center;
+    background-color: steelblue;
+    background-image: url(../images/business.jpg);
+    background-position: bottom;
 }
 
 p.footer {
@@ -121,7 +129,6 @@ p.footer {
     height: 4em;
     line-height: 2em;
     font-size: 1.2em;
-    background-color: cadetblue;
     text-decoration: underline;
 }
 
@@ -139,4 +146,6 @@ p.footer {
 
 .notification p{
     margin-top: 1%;
+    font-size: 1.4em;
+    color: forestgreen;
 }
