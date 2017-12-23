@@ -14,6 +14,8 @@ if(!empty($_REQUEST) && empty($_GET['flagEdit'])  && empty($_GET['sortByPriority
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
     
+    <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/style.css">
     <title>TODO LIST</title>
 
